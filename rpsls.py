@@ -93,7 +93,7 @@ def playagain():
 
 
 def game():		
-	userchoice = input("\nRock, paper, scissors, lizard, or Spock? ").lower()
+	userchoice = input("\nRock, paper, scissors, lizard, or Spock? ").strip(" ").lower()
 	print_userchoice(userchoice)
 
 	seq = ["rock", "paper", "scissors", "lizard", "spock"]
