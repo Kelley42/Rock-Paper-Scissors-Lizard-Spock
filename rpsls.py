@@ -100,45 +100,26 @@ def game():
 	computerchoice = random.choice(seq)
 	print_computerchoice(computerchoice)
 
-	if computerchoice == "rock":
-		if userchoice == "paper" or userchoice == "spock":
-			print("You win!")
-		elif userchoice == "scissors" or userchoice == "lizard":
-			print("You lost.")
-		else:
-			print("It's a draw.")
-	elif computerchoice == "paper":
-		if userchoice == "scissors" or userchoice == "lizard":
-			print("You win!")
-		elif userchoice == "rock" or userchoice == "spock":
-			print("You lost.")
-		else:
-			print("It's a draw!")
-	elif computerchoice == "scissors":
-		if userchoice == "rock" or userchoice == "spock":
-			print("You win!")
-		elif userchoice == "paper" or userchoice == "lizard":
-			print("You lose.")
-		else:
-			print("It's a draw.")
-	elif computerchoice == "lizard":
-		if userchoice == "scissors" or userchoice == "rock":
-			print("You win!")
-		elif userchoice == "paper" or userchoice == "spock":
-			print("You lose.")
-		else:
-			print("It's a draw.")
-	elif computerchoice == "spock":
-		if userchoice == "paper" or userchoice == "lizard":
-			print("You win!")
-		elif userchoice == "rock" or userchoice == "scissors":
-			print("You lose.")
-		else:
-			print("It's a draw.")
+	win = "You win!"
+	lose = "You lose."
+	draw = "It's a draw."
+	
+	row1 = [draw, lose, win, win, lose]
+	row2 = [win, draw, lose, lose, win]
+	row3 = [lose, win, draw, win, lose]
+	row4 = [lose, win, lose, draw, win]
+	row5 = [win, lose, win, lose, draw]
+	
+	grid = [row1, row2, row3, row4, row5]
+
+	y = int(seq.index(computerchoice))
+	x = int(seq.index(userchoice))
+	print(grid[x][y])
+
 	playagain()
 
 
 # Start game
-print("Rock Paper Scissors Game!")
+print("\nRock Paper Scissors Lizard Spock Game!")
 
 game()
